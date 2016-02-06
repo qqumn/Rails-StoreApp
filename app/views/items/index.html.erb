@@ -1,0 +1,17 @@
+<h1>List of items</h1>
+<table>
+  <tr>
+    <th>id</th>
+    <th>Name item</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+   <% @items.each do |i| %>
+      <tr>
+        <td><%= i.id %></td>
+        <td><%= link_to i.name, item_path(i)%></td>
+        <td><%= i.price %> grn</td>
+        <td><%= link_to "Delete", i, method: :delete, data: { confirm: "Точно хотите удалить?"}%></td>
+      </tr>
+   <% end %>
+</table>
